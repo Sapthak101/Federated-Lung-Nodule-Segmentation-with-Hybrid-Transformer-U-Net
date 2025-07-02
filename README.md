@@ -155,7 +155,7 @@ python client5.py
 | Reference | Model | Dice Score | Parameters |
 | --------- | ----- | ---------- | ---------- |
 | Jain et al. (2021) | Metaheuristic-based GAN (SSSOA-GAN) | 0.7986 | ~32–38M |
-| Yu et al. (2021)   | 3D Residual U-Net                    | >0.80 (for nodules >10mm) | ~30–35M |
+| Yu et al. (2021)   | 3D Residual U-Net                    | 0.80 (for nodules >10mm) | ~30–35M |
 | **Ours**           | Federated Hybrid Transformer U-Net   | **0.800** | **7–8M** |
 
 ---
