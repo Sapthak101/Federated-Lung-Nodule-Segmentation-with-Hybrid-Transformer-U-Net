@@ -22,19 +22,19 @@ This project presents a federated learning framework designed to perform **solid
 
 ```
 ├── Comparison Models/
-│   ├── fcn8_model.py
-│   ├── pspnet_2d_model.py
-│   ├── resunet_2d_model.py
-│   ├── unet_3d_model.py
-│   ├── mssunet_2d_model.py
+│   ├── FCN-8/Model Architecture.py
+│   ├── 2D PSPNet/Model Architecture.py
+│   ├── 2D ResUNet/Model Architecture.py
+│   ├── 3D U-Net/Model Architecture.py
+│   ├── MSS U-Net/Model Architecture.py
 │
 ├── Proposed Architecture/
-│   ├── client1.py
-│   ├── client2.py
-│   ├── client3.py
-│   ├── client4.py
-│   ├── client5.py
-│   └── server.py
+│   ├── Client Scripts/client1.py
+│   ├── Client Scripts/client2.py
+│   ├── Client Scripts/client3.py
+│   ├── Client Scripts/client4.py
+│   ├── Client Scripts/client5.py
+│   └── Server Script/server.py
 │
 ├── Preprocessing Data/
 │   └── Preprocessing_Data.ipynb
@@ -58,8 +58,8 @@ Client-wise preprocessed dataset split for federated learning (in `.npy` format)
 
 Each directory contains:
 ```
-train_images.npy
-train_masks.npy
+client_x_images.npy
+client_x_masks.npy
 ```
 
 ---
