@@ -164,7 +164,7 @@ python client5.py
 python run_federated_experiment.py model_x, where x: 1,2,3,4,5,6
 ```
 ⚠️ Make sure to import the correct models in the Client files, currently initialized with model_1
-> Analysis folder can be used for pixelwise analysis, and model checkpoints can be extracted from the client file directory for further analysis
+> Pixelwise analysis file can be used for pixelwise analysis, and model checkpoints can be extracted from the client file directory for further analysis
 
 ## 🧪 Results Summary
 
