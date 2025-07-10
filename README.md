@@ -27,7 +27,27 @@ This project presents a federated learning framework designed to perform **solid
 │   ├── 2D ResUNet/Model Architecture.py
 │   ├── 3D U-Net/Model Architecture.py
 │   ├── MSS U-Net/Model Architecture.py
-│
+|
+Federated Setup To Run all the Models/
+├── clients/
+│   ├── client_1.py
+│   ├── client_2.py
+│   ├── client_3.py
+│   ├── client_4.py
+│   ├── client_5.py        
+│   └── __init__.py     
+├── models/
+│   ├── __init__.py   
+│   ├── model_1.py
+│   ├── model_2.py
+│   ├── model_3.py
+│   ├── model_4.py
+│   ├── model_5.py
+│   ├── model_6.py      
+├── run_federated_experiment.py
+├── Anslysis.ipynb
+├── server.py
+|
 ├── Proposed Architecture/
 │   ├── Client Scripts/client1.py
 │   ├── Client Scripts/client2.py
@@ -115,7 +135,7 @@ A **Federated Hybrid Transformer Residual U-Net** model integrating:
 
 ---
 
-## 🖥️ How to Run (Federated Setup)
+## 🖥️ How to Run (Federated Setup: For the Proposed Architecture)
 
 > Make sure all `client*.py` and `server.py` files are in the same directory.
 
@@ -137,16 +157,25 @@ python client5.py
 
 ---
 
+## 🖥️ How to Run (Federated Setup: For testing the comparison models)
+> Use the 📁 Federated Setup To Run all the Models Folder 📁
+> Run the commands:
+```bash
+python run_federated_experiment.py model_x, where x: 1,2,3,4,5,6
+```
+⚠️ Make sure to import the correct models in the Client files, currently initialized with model_1
+> Analysis folder can be used for pixelwise analysis, and model checkpoints can be extracted from the client file directory for further analysis
+
 ## 🧪 Results Summary
 
-| Model                               | Dice Score | Parameters |
-| ----------------------------------- | ---------- | ---------- |
-| FCN-8s                              | 0.310      | ~12M       |
-| 2D PSPNet                           | 0.580      | ~22M       |
-| 2D Res U-Net                        | 0.715      | ~15M       |
-| 3D U-Net                            | 0.680      | ~30–35M    |
-| MSS U-Net                           | 0.670      | ~18M       |
-| **Ours (Hybrid Transformer-U-Net)** | **0.800**  | **7–8M**   |
+| Model                               | Dice Score |
+| ----------------------------------- | ---------- | 
+| FCN-8s                              | 0.310      |
+| 2D PSPNet                           | 0.580      |
+| 2D Res U-Net                        | 0.715      |
+| 3D U-Net                            | 0.680      |
+| MSS U-Net                           | 0.670      | 
+| **Ours (Hybrid Transformer-U-Net)** | **0.800**  | 
 
 ---
 
@@ -175,10 +204,7 @@ python client5.py
 
 ---
 
-## 🧑‍💻 Contact
+## Research Citation
 
-For research collaboration, code issues, or academic queries:
-
-**📧 Email**: sapthakmohajon6@gmail.com
 
 ---
