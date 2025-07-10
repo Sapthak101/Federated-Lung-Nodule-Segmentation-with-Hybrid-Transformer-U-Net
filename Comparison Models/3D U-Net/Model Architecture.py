@@ -3,19 +3,31 @@ def conv_block_3d(inputs, filters):
     x = Conv3D(filters, (3, 3, 3), padding='same', kernel_initializer='he_normal')(inputs)
     x = BatchNormalization()(x)
     x = Activation('relu')(x)
-    
+
     x = Conv3D(filters, (3, 3, 3), padding='same', kernel_initializer='he_normal')(x)
     x = BatchNormalization()(x)
     x = Activation('relu')(x)
     return x
 
+# ---------------------- COMBINED LOSS (you can customize as needed) ----------------------
+def combined_loss(y_true, y_pred):
+    bce = tf.keras.losses.BinaryCrossentropy()(y_true, y_pred)
+    dice_loss = 1 - (2 * tf.reduce_sum(y_true * y_pred) + 1) / (tf.reduce_sum(y_true) + tf.reduce_sum(y_pred) + 1)
+    return bce + dice_loss
+
 # ---------------------- 3D U-NET ARCHITECTURE ----------------------
-def build_3d_unet_single_depth(input_shape=(128, 128, 1, 1)):
-    """3D U-Net for (128, 128, 1, 1) input volume and (128, 128, 1) mask"""
+def build_3d_unet_single_depth(input_shape=(128, 128, 1)):
+    """
+    Builds a 3D U-Net where input shape is (128, 128, 1) and is reshaped internally to (128, 128, 1, 1)
+    Output shape is (128, 128, 1)
+    """
     inputs = Input(input_shape)
 
+    # Reshape to add depth dimension: (128, 128, 1) → (128, 128, 1, 1)
+    x = Reshape((128, 128, 1, 1))(inputs)
+
     # Encoder
-    c1 = conv_block_3d(inputs, 32)
+    c1 = conv_block_3d(x, 32)
     p1 = MaxPooling3D(pool_size=(2, 2, 1))(c1)
 
     c2 = conv_block_3d(p1, 64)
@@ -48,12 +60,13 @@ def build_3d_unet_single_depth(input_shape=(128, 128, 1, 1)):
     u9 = concatenate([u9, c1])
     c9 = conv_block_3d(u9, 32)
 
-    # Final 3D Conv output: shape = (128, 128, 1, 1)
-    conv_final = Conv3D(1, kernel_size=(1, 1, 1), activation='sigmoid')(c9)
+    # Final layer
+    conv_final = Conv3D(1, kernel_size=(1, 1, 1), activation='sigmoid')(c9)  # Output shape: (128, 128, 1, 1)
 
-    # Remove the depth dimension: reshape (128, 128, 1, 1) → (128, 128, 1)
+    # Remove the depth dimension to get output shape (128, 128, 1)
     output = Reshape((128, 128, 1))(conv_final)
 
     model = Model(inputs=inputs, outputs=output)
     model.compile(optimizer=tf.keras.optimizers.Adam(1e-4), loss=combined_loss, metrics=['accuracy'])
+
     return model
