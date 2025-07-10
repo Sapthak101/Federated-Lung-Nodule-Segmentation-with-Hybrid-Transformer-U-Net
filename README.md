@@ -34,7 +34,8 @@ Federated Setup To Run all the Models/
 │   ├── client_2.py
 │   ├── client_3.py
 │   ├── client_4.py
-│   ├── client_5.py        
+│   ├── client_5.py
+│   ├──Pixel Wise Analysis.ipynb        
 │   └── __init__.py     
 ├── models/
 │   ├── __init__.py   
@@ -45,7 +46,6 @@ Federated Setup To Run all the Models/
 │   ├── model_5.py
 │   ├── model_6.py      
 ├── run_federated_experiment.py
-├── Anslysis.ipynb
 ├── server.py
 |
 ├── Proposed Architecture/
