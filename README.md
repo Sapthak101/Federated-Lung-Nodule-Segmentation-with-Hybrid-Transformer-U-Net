@@ -136,7 +136,8 @@ A **Federated Hybrid Transformer Residual U-Net** model integrating:
 ---
 
 ## 🖥️ How to Run (Federated Setup: For the Proposed Architecture)
-> Run the requirement.txt file
+> Run the requirement.txt file: pip install -r requirements.txt
+
 > Make sure all `client*.py` and `server.py` files are in the same directory.
 
 ### 1. Launch Server
@@ -158,8 +159,10 @@ python client5.py
 ---
 
 ## 🖥️ How to Run (Federated Setup: For testing the comparison models)
-> Run the requirement.txt file
+> Run the requirement.txt file: pip install -r requirements.txt
+
 > Use the 📁 Federated Setup To Run all the Models Folder 📁
+
 > Run the commands:
 ```bash
 python server.py (Terminal 1)
