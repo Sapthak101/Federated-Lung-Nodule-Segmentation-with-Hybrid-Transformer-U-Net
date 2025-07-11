@@ -28,23 +28,23 @@ This project presents a federated learning framework designed to perform **solid
 │   ├── 3D U-Net/Model Architecture.py
 │   ├── MSS U-Net/Model Architecture.py
 |
-Federated Setup To Run all the Models/
-├── clients/
-│   ├── client_1.py
-│   ├── client_2.py
-│   ├── client_3.py
-│   ├── client_4.py
-│   ├── client_5.py
-│   ├──Pixel Wise Analysis.ipynb        
-│   └── __init__.py     
-├── models/
-│   ├── __init__.py   
-│   ├── model_1.py
-│   ├── model_2.py
-│   ├── model_3.py
-│   ├── model_4.py
-│   ├── model_5.py
-│   ├── model_6.py      
+├──Federated Setup To Run all the Models/
+├  |── clients/
+│     ├── client_1.py
+│     ├── client_2.py
+│     ├── client_3.py
+│     ├── client_4.py
+│     ├── client_5.py
+│     ├──Pixel Wise Analysis.ipynb        
+│     └── __init__.py     
+├  ── models/
+│     ├── __init__.py   
+│     ├── model_1.py
+│     ├── model_2.py
+│     ├── model_3.py
+│     ├── model_4.py
+│     ├── model_5.py
+│     ├── model_6.py      
 ├── run_federated_experiment.py
 ├── server.py
 |
@@ -136,7 +136,7 @@ A **Federated Hybrid Transformer Residual U-Net** model integrating:
 ---
 
 ## 🖥️ How to Run (Federated Setup: For the Proposed Architecture)
-
+> Run the requirement.txt file
 > Make sure all `client*.py` and `server.py` files are in the same directory.
 
 ### 1. Launch Server
@@ -158,12 +158,15 @@ python client5.py
 ---
 
 ## 🖥️ How to Run (Federated Setup: For testing the comparison models)
+> Run the requirement.txt file
 > Use the 📁 Federated Setup To Run all the Models Folder 📁
 > Run the commands:
 ```bash
-python run_federated_experiment.py model_x, where x: 1,2,3,4,5,6
+python server.py (Terminal 1)
+python run_federated_experiment.py model_x, where x: 1,2,3,4,5,6 (Terminal 2)
 ```
-⚠️ Make sure to import the correct models in the Client files, currently initialized with model_1
+⚠️ Make sure to import the correct models in the client files, currently initialized with model_6 (The Proposed Model)
+⚠️Place the dataset in numpy array format in the client files
 > Pixelwise analysis file can be used for pixelwise analysis, and model checkpoints can be extracted from the client file directory for further analysis
 
 ## 🧪 Results Summary
@@ -203,6 +206,8 @@ python run_federated_experiment.py model_x, where x: 1,2,3,4,5,6
 📥 [Google Drive - Final Checkpoints](https://drive.google.com/drive/folders/1Pxd7hlU4ZAcKaEJnwqQyi2dEEKEcbQnl)
 
 ---
+##
+
 
 ## Research Citation
 
