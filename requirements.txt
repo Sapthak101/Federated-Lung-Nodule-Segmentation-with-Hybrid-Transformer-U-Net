@@ -1,0 +1,7 @@
+python==3.10.9          # Specify Python version if using tools like pyenv or Docker
+tensorflow==2.15.0
+flwr
+numpy
+pandas
+matplotlib
+scikit-learn
