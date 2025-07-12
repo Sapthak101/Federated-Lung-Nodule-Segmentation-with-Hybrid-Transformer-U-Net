@@ -37,7 +37,7 @@ This project presents a federated learning framework designed to perform **solid
 │     ├── client_5.py
 │     ├──Pixel Wise Analysis.ipynb        
 │     └── __init__.py     
-├  ── models/
+├  |── models/
 │     ├── __init__.py   
 │     ├── model_1.py
 │     ├── model_2.py
@@ -58,6 +58,7 @@ This project presents a federated learning framework designed to perform **solid
 │
 ├── Preprocessing Data/
 │   └── Preprocessing_Data.ipynb
+├── requirements.txt
 ```
 
 ---
